@@ -87,7 +87,7 @@ section .local .local-list {
     color: #48C9B0;
 }
 
-svg.seta {
+a {
     margin-left: auto;
 }
 

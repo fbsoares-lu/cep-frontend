@@ -59,7 +59,7 @@ const DashBoard: React.FC = () => {
                                 <strong>{cepInformation.logradouro}</strong>
                                 <p>{cepInformation.localidade}</p>
                             </div>
-                            <FiChevronRight className="seta" size={20} color='#48C9B0'/>
+                            <a href=""><FiChevronRight className="seta" size={20} color='#48C9B0'/></a>
                         </div>
                     ))}
                 </section>
