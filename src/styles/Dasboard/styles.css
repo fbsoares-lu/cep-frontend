@@ -6,19 +6,20 @@ article#content {
     align-items: center;
     justify-content: center;
 }
+.content-cep {
+    width: 400px;
+}
 
 form.form-class {
-    max-width: 400px;
-
     display: flex;
     flex:1;
     flex-direction: column;
-    
 }
 
 h1 {
     margin-bottom: 10px;
-    color: #48C9B0;
+    font-size: 2.3rem;
+    color: #1ABC9C;
 }
 
 .input-icon {
@@ -26,7 +27,7 @@ h1 {
     align-items: center;
     padding: 20px;
     border: 0;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
     background: #FFF;
 }
 
@@ -40,11 +41,11 @@ input::placeholder {
     color: #CCD1D1;
 }
 
+
 button {
-    margin-top: 10px;
-    height: 40px;
+    height: 50px;
     border: 0;
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
     background: #48C9B0;
     color: #FFF;
 
@@ -53,4 +54,151 @@ button {
 
 button:hover {
     background: #1ABC9C;
+}
+
+section .local {
+    display: flex;
+    align-items: center;
+
+    margin-top: 10px;
+    padding: 15px;
+    background: #FFF;
+    border-radius: 0px 5px 5px 0px;
+    border-left:  6px solid #48C9B0;
+    transition: 0.3s;
+}
+
+section .local:hover {
+    margin: 10px -20px 0px 20px;
+}
+
+section .local .local-list {
+    margin-left: 20px;
+}
+
+
+.local-list strong {
+    font-size: 1.6rem;
+    color: #1ABC9C;
+}
+
+.local-list p {
+    font-size: 1.4rem;
+    color: #48C9B0;
+}
+
+svg.seta {
+    margin-left: auto;
+}
+
+svg.home {
+    width: 30px;
+    height: 30px;
+}
+
+@media (max-width: 426px) {
+    .content-cep {
+        width: 350px;
+    }
+
+    .local-list strong {
+        font-size: 1.4rem;
+        color: #1ABC9C;
+    }
+
+    .local-list p {
+        font-size: 1.2rem;
+        color: #48C9B0;
+    }
+
+    svg.home {
+        width: 25px;
+        height: 25px;
+    }
+
+    .input-icon {
+        padding: 15px;
+    }
+
+    button {
+        height: 40px;
+    }
+}
+
+@media (max-width: 376px) {
+    .content-cep {
+        width: 320px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .local-list strong {
+        font-size: 1.2rem;
+        color: #1ABC9C;
+    }
+
+    .local-list p {
+        font-size: 1.1rem;
+        color: #48C9B0;
+    }
+
+    svg.home {
+        width: 25px;
+        height: 25px;
+    }
+
+    .input-icon {
+        padding: 15px;
+    }
+
+    button {
+        height: 40px;
+    }
+
+    input::placeholder {
+        font-size: 1.4rem;
+        color: #CCD1D1;
+    }
+}
+
+@media (max-width: 321px) {
+    .content-cep {
+        width: 280px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .local-list strong {
+        font-size: 1.1rem;
+        color: #1ABC9C;
+    }
+
+    .local-list p {
+        font-size: 1.1rem;
+        color: #48C9B0;
+    }
+
+    svg.home {
+        width: 25px;
+        height: 25px;
+    }
+
+    .input-icon {
+        padding: 15px;
+    }
+
+    button {
+        height: 40px;
+    }
+
+    input::placeholder {
+        font-size: 1.4rem;
+        color: #CCD1D1;
+    }
+
+    
 }

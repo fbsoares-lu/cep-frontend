@@ -1,0 +1,18 @@
+.input-icon {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 0;
+    border-radius: 5px;
+    background: #FFF;
+}
+
+input {
+    flex:1;
+    border: 0;
+    padding: 0 10px;
+    color: #1ABC9C;
+}
+input::placeholder {
+    color: #CCD1D1;
+}

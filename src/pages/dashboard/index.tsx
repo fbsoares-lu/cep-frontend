@@ -1,6 +1,6 @@
-import { stringify } from 'querystring';
 import React, { FormEvent, useState } from 'react';
-import {FiMapPin} from 'react-icons/fi';
+import {FiMapPin, FiHome, FiChevronRight} from 'react-icons/fi';
+import Input from '../../components/Input';
 import api from '../../services/api';
 
 import '../../styles/Dasboard/styles.css';
@@ -21,6 +21,7 @@ const DashBoard: React.FC = () => {
 
     async function handlerSubmit(event: FormEvent<HTMLFormElement>): Promise<void> {
         event.preventDefault();
+        console.log(cep);
         
         const response = await api.get(`/${cep}/json`);
         const show = response.data;
@@ -34,28 +35,35 @@ const DashBoard: React.FC = () => {
 
     return(
         <article id='content'>
-            <form onSubmit={handlerSubmit} className='form-class'>
-                <h1>Consulta CEP</h1>
-                <div className='input-icon'>
-                    <FiMapPin size={20} color='#CCD1D1'/>
-                    <input 
-                    value={cep}
-                    onChange={(e): void => setCep(e.target.value)}
-                    placeholder="Informe o seu CEP"
-                    onFocus={() => {setIsFocused(true)}}
-                    onBlur={() => {setIsFocused(false)}}
-                    />
-                    {isFocused ? <h1>ola</h1> : null}
-                </div>
-                <button type='submit'>Pesquisar</button>
-                
-            </form>
+            <div className='content-cep'>
+                <form onSubmit={handlerSubmit} className='form-class'>
+                    <h1>Consulta CEP</h1>
+                    <div className='input-icon'>
+                        <FiMapPin size={20} color='#CCD1D1'/>
+                        <input 
+                        placeholder="Informe o seu CEP"
+                        value={cep}
+                        onChange={(e):void => setCep(e.target.value)}
+                        onBlur={() => setIsFocused(false)} 
+                        onFocus={() => setIsFocused(true)}
+                        />
+                    </div>
+                    <button type='submit'>Pesquisar</button>
+                </form>
 
-            <section>
-                {cepInfo.map(cepInformation => (
-                    <h1>{cepInformation.cep}</h1>
-                ))}
-            </section>
+                <section>
+                    {cepInfo.map(cepInformation => (
+                        <div key={cepInformation.cep} className='local'>
+                            <FiHome className='home' size={30} color='#48C9B0'/>
+                            <div className='local-list'>
+                                <strong>{cepInformation.logradouro}</strong>
+                                <p>{cepInformation.localidade}</p>
+                            </div>
+                            <FiChevronRight className="seta" size={20} color='#48C9B0'/>
+                        </div>
+                    ))}
+                </section>
+            </div>          
         </article>
     );
 };
