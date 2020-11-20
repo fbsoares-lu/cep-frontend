@@ -1,6 +1,8 @@
 import React, { FormEvent, useState } from 'react';
 import {FiMapPin, FiHome, FiChevronRight} from 'react-icons/fi';
-import Input from '../../components/Input';
+import {Link} from 'react-router-dom';
+
+import mapView from '../mapView';
 import api from '../../services/api';
 
 import '../../styles/Dasboard/styles.css';
@@ -59,7 +61,7 @@ const DashBoard: React.FC = () => {
                                 <strong>{cepInformation.logradouro}</strong>
                                 <p>{cepInformation.localidade}</p>
                             </div>
-                            <a href=""><FiChevronRight className="seta" size={20} color='#48C9B0'/></a>
+                            <Link to='/mapview'><FiChevronRight className="seta" size={20} color='#48C9B0'/></Link>
                         </div>
                     ))}
                 </section>

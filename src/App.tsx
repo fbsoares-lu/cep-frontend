@@ -1,14 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router} from 'react-router-dom';
 
-import DashBoard from './pages/dashboard/index';
+import Routes from './routes/index';
+
 import './styles/global.css';
 
 const App: React.FC = () => {
   return(
-    <>
-      <DashBoard/>
-    </>
-    
+    <Router>
+      <Routes/>
+    </Router>
   );
 }
 
